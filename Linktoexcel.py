@@ -21,5 +21,30 @@ def writedata(filename, name, regno, sid):
     except:
         return "Error"
 
-#createfile("IOT_SEC_A.xlsx")
-writedata("IOT_SEC_A.xlsx", "LOVE", "219311046", "43 TR IO TD")
+
+def readcardno(filename):
+    try:
+        wb2 = openpyxl.load_workbook("IOT_SEC_A.xlsx")
+        sheet = wb2.active
+        values = [sheet.cell(row=i, column=3).value for i in range(1, sheet.max_row + 1)]
+        return values
+    except:
+        return "Error"
+
+def readstudname(filename):
+    try:
+        wb2 = openpyxl.load_workbook("IOT_SEC_A.xlsx")
+        sheet = wb2.active
+        values = [sheet.cell(row=i, column=1).value for i in range(1, sheet.max_row + 1)]
+        return values
+    except:
+        return "Error"
+
+def readregno(filename):
+    try:
+        wb2 = openpyxl.load_workbook("IOT_SEC_A.xlsx")
+        sheet = wb2.active
+        values = [sheet.cell(row=i, column=2).value for i in range(1, sheet.max_row + 1)]
+        return values
+    except:
+        return "Error"
