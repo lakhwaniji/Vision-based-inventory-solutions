@@ -14,7 +14,7 @@ camera.release()
 cv2.destroyAllWindows()    
 
 def tesseract():
-    path_to_tesseract=r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+    path_to_tesseract=r"/opt/homebrew/bin/tesseract"
     image_path='test1.jpg'
     pytesseract.tesseract_cmd=path_to_tesseract
     text=pytesseract.image_to_string(Image.open(image_path))

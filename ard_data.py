@@ -2,7 +2,7 @@ import serial
 
 
 def scanning_card():
-    arduino = serial.Serial(port='<YOUR CONNECTED PORT TO ARDUINO>', baudrate=9600)
+    arduino = serial.Serial(port='/dev/cu.usbmodem11101', baudrate=9600)
     try:
         data = arduino.readline()
         data = str(data)
